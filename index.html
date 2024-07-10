@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <div class="container">
+                <div class="screen">
+                    <div class="screen-header">
+                        <h2>Keep in Touch</h2>
+                    </div>
+                    <div class="screen-body">
+                        <div class="screen-body-item left">
+                            <div class="app-title">
+                                <span>CONTACT</span>
+                                <span>US</span>
+                            </div>
+                            <div class="app-contact">Hey_ Ankur Verma</div>
+                        </div>
+                        <div class="screen-body-item">
+                            <div class="app-form">
+
+                                <input type="hidden" name="access_key" value="535988ef-bffc-4c80-b0fb-eef11fb5f54f">
+                                <div class="app-form-group">
+                                    <input name="name" class="app-form-control" placeholder="NAME">
+                                </div>
+                                <div class="app-form-group">
+                                    <input class="app-form-control" 
+                                    name="email" placeholder="EMAIL">
+                                </div>
+                                <div class="app-form-group">
+                                    <input  
+                                    name="contact"
+                                    class="app-form-control" placeholder="CONTACT NO">
+                                </div>
+                                <div class="app-form-group message">
+                                    <input name="message" class="app-form-control" placeholder="MESSAGE">
+                                </div>
+                                <div class="app-form-group buttons">
+
+                                    <button type="submit" class="app-form-button">SEND</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="credits">
+                    Designed by @
+                    <a class="credits-link" href="https://github.com/Ankur-ver" target="_blank">
+
+                        Ankur
+                    </a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            var emailField = document.getElementById('email');
+            var email = emailField.value;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
